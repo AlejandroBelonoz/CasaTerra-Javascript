@@ -1,9 +1,9 @@
-// Definir constantes para los precios de las plantas
+// Constantes para los precios de las plantas
 const precioPlanta1 = 5000;
 const precioPlanta2 = 3800;
 const precioPlanta3 = 10000;
 
-// Definir un array de plantas disponibles
+// Array de plantas disponibles
 const plantasDisponibles = ['Alocasia Silver Dragon', 'Alocasia Cuprea', 'Monstera Variegata'];
 
 // Función para mostrar las opciones de compra al usuario
@@ -22,7 +22,7 @@ function mostrarOpciones() {
 
 // Función para procesar la selección del usuario
 function procesarSeleccion() {
-  let carrito = []; // Array para almacenar los productos en el carrito
+  let carrito = [];
 
   do {
     // Pedir al usuario que seleccione una planta
@@ -30,7 +30,7 @@ function procesarSeleccion() {
 
     // Verificar si el usuario canceló la selección
     if (seleccion === null) {
-      break; // Salir del bucle si el usuario canceló la selección
+      break; 
     }
 
     // Convertir la selección a un número entero
@@ -56,25 +56,25 @@ function procesarSeleccion() {
           break;
       }
 
-      // Pedir al usuario la cantidad de unidades a comprar
+      // Cantidad de unidades a comprar
       let cantidad = prompt(`Has seleccionado ${plantaSeleccionada}. El precio es $${precio} por unidad.\nPor favor, ingresa la cantidad de unidades que deseas comprar:`);
 
-      // Convertir la cantidad a un número entero
+      
       cantidad = parseInt(cantidad);
 
       // Verificar si la cantidad es válida
       if (!isNaN(cantidad) && cantidad > 0) {
         let precioTotal = precio * cantidad;
-        carrito.push({ producto: plantaSeleccionada, cantidad: cantidad, precioTotal: precioTotal }); // Agregar el producto al carrito
+        carrito.push({ producto: plantaSeleccionada, cantidad: cantidad, precioTotal: precioTotal });
         alert(`Has seleccionado ${cantidad} unidades de ${plantaSeleccionada}. El precio total es $${precioTotal}.`);
       } else {
         alert('Cantidad inválida. Por favor, ingresa un número válido de unidades.');
       }
     } else {
-      // Mostrar un mensaje de error si la selección no es válida
+      // Mensaje de error si la selección no es válida
       alert('Selección inválida. Por favor, elige un número dentro del rango proporcionado.');
     }
-  } while (true); // Repetir hasta que el usuario cancele la selección
+  } while (true);
   
   // Mostrar el resumen de la compra
   mostrarResumenCompra(carrito);
@@ -93,17 +93,17 @@ function mostrarResumenCompra(carrito) {
 
     resumen += `\nTotal de la compra: $${totalCompra}`;
     alert(resumen);
-    // Agregar un mensaje de despedida
+    // Mensaje de despedida
     alert('¡Gracias por tu compra! Serás redirigido a la página de pago.');
-    // Simular redireccionamiento a la página de pago
+    
     window.location.href = 'pagina_pago.html';
   } else {
     alert('No has agregado ningún producto al carrito.');
   }
 }
 
-// Llamar a la función principal para mostrar las opciones al usuario
+// Función principal para mostrar las opciones al usuario
 mostrarOpciones();
 
-// Llamar a la función para procesar la selección del usuario
+// Función para procesar la selección del usuario
 procesarSeleccion();
