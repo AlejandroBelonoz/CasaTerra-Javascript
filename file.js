@@ -13,7 +13,7 @@ function mostrarOpciones() {
   
   // Iterar sobre el array de plantas y mostrarlas al usuario
   plantasDisponibles.forEach((planta, index) => {
-    mensaje += `${index + 1}. ${planta}\n`; // Se corrigió el uso de comillas invertidas para la interpolación de la cadena
+    mensaje += `${index + 1}. ${planta}\n`;
   });
   
   // Mostrar el mensaje con las opciones al usuario
@@ -95,7 +95,7 @@ function mostrarResumenCompra(carrito) {
     alert(resumen);
     // Agregar un mensaje de despedida
     alert('¡Gracias por tu compra! Serás redirigido a la página de pago.');
-    // Simular redireccionamiento a la página de pago (cambiar la URL según sea necesario)
+    // Simular redireccionamiento a la página de pago
     window.location.href = 'pagina_pago.html';
   } else {
     alert('No has agregado ningún producto al carrito.');
